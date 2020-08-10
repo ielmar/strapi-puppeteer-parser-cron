@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "parsednews",
+  "info": {
+    "name": "parsednews"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "link": {
+      "type": "string"
+    },
+    "site": {
+      "model": "site",
+      "via": "parsednew"
+    },
+    "image_link": {
+      "type": "string"
+    },
+    "extraTitle": {
+      "type": "string"
+    },
+    "publish_date": {
+      "type": "date"
+    },
+    "publish_time": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "extra_photos": {
+      "type": "richtext"
+    }
+  }
+}
