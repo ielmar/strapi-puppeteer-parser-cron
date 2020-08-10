@@ -43,7 +43,7 @@ module.exports = {
         // 1 - Create a new browser.
         const browser = await puppeteer.launch({
           // headless: false,
-          slowMo: 100,
+          // slowMo: 100,
           args: [
               "--no-sandbox",
               '--window-size=1024,728',
