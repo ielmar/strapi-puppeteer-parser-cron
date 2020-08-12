@@ -32,13 +32,13 @@ const monthsArray = [
 
 module.exports = {
 
-  "*/3 * * * *":  () => {
+  "*/5 * * * *":  () => {
 
     (async () => {
       try {
 
         // get unfinished last 30 news item
-        const lastNewsItems = await strapi.query('parsednews').find({ _limit: 30 })
+        const lastNewsItems = await strapi.query('parsednews').find({ _limit: 30, _sort: 'id:desc' })
 
         // 1 - Create a new browser.
         const browser = await puppeteer.launch({
