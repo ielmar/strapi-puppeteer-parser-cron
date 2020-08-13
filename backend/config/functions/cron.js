@@ -37,9 +37,6 @@ module.exports = {
     (async () => {
       try {
 
-        // get unfinished last 30 news item
-        const lastNewsItems = await strapi.query('parsednews').find({ _limit: 30, _sort: 'id:desc' })
-
         // 1 - Create a new browser.
         const browser = await puppeteer.launch({
           // headless: false,
@@ -88,7 +85,10 @@ module.exports = {
 
           let link = news_links[i];
 
-          const alreadyAdded = lastNewsItems.filter(item => item.link === link)
+          // check if we have this link
+          const alreadyAdded = await strapi.query('parsednews').find({ link: link })
+
+          // const alreadyAdded = lastNewsItems.filter(item => item.link === link)
 
           if(alreadyAdded.length > 0) {
             continue;
