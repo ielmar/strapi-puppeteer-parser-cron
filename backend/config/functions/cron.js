@@ -32,7 +32,7 @@ const monthsArray = [
 
 module.exports = {
 
-  "*/1 * * * *":  () => {
+  "*/5 * * * *":  () => {
 
     (async () => {
       try {
