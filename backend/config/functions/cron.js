@@ -32,14 +32,14 @@ const monthsArray = [
 
 module.exports = {
 
-  "*/5 * * * *":  () => {
+  "*/1 * * * *":  () => {
 
     (async () => {
       try {
 
         // 1 - Create a new browser.
         const browser = await puppeteer.launch({
-          // headless: false,
+          headless: false,
           // slowMo: 100,
           args: [
               "--no-sandbox",
@@ -90,9 +90,9 @@ module.exports = {
 
           // const alreadyAdded = lastNewsItems.filter(item => item.link === link)
 
-          if(alreadyAdded.length > 0) {
-            continue;
-          }
+          // if(alreadyAdded.length > 0) {
+          //   continue;
+          // }
 
           await page.goto(link, {waitUntil: 'networkidle2'});
 
@@ -157,7 +157,8 @@ module.exports = {
           const [day, month, year] = publishDate.split(' ')
           const monthIdx = monthsArray.filter(idx => idx.month === month)[0].order
 
-          const publish_date = `${year}-${monthIdx.length>1?monthIdx:'0'+monthIdx}-${day.length>1?day:'0'+day}`
+          // const publish_date = `${year}-${monthIdx.length>1?monthIdx:'0'+monthIdx}-${day.length>1?day:'0'+day}`
+          const publish_date = `${year}-${monthIdx}-${day}`
 
 
           // get category from strapi
@@ -182,7 +183,9 @@ module.exports = {
             extra_photos
           }
 
-          strapi.services.parsednews.create(newsItem);
+          console.log(newsItem)
+
+          // strapi.services.parsednews.create(newsItem);
 
           // await page.waitFor(1000)
         }
