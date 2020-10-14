@@ -88,11 +88,9 @@ module.exports = {
           // check if we have this link
           const alreadyAdded = await strapi.query('parsednews').find({ link: link })
 
-          // const alreadyAdded = lastNewsItems.filter(item => item.link === link)
-
-          // if(alreadyAdded.length > 0) {
-          //   continue;
-          // }
+          if(alreadyAdded.length > 0) {
+            continue;
+          }
 
           await page.goto(link, {waitUntil: 'networkidle2'});
 
@@ -183,9 +181,9 @@ module.exports = {
             extra_photos
           }
 
-          console.log(newsItem)
+          // console.log(newsItem)
 
-          // strapi.services.parsednews.create(newsItem);
+          strapi.services.parsednews.create(newsItem);
 
           // await page.waitFor(1000)
         }
