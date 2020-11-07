@@ -3,7 +3,6 @@
 // Require the puppeteer module.
 const puppeteer = require("puppeteer");
 const iPhone = puppeteer.devices[ 'iPhone 8' ];
-const cheerio = require("cheerio");
 
 const monthsArray = [
   {order: 1, month: 'Yanvar'},
@@ -154,9 +153,10 @@ module.exports = {
           // prepare sql like publish datetime
           const [day, month, year] = publishDate.split(' ')
           const monthIdx = monthsArray.filter(idx => idx.month === month)[0].order
+          // console.log(day)
 
-          // const publish_date = `${year}-${monthIdx.length>1?monthIdx:'0'+monthIdx}-${day.length>1?day:'0'+day}`
-          const publish_date = `${year}-${monthIdx}-${day}`
+          const publish_date = `${year}-${monthIdx>9?monthIdx:'0'+monthIdx}-${day>9?day:'0'+day}`
+          // const publish_date = `${year}-${monthIdx}-${day}`
 
 
           // get category from strapi
@@ -181,7 +181,7 @@ module.exports = {
             extra_photos
           }
 
-          // console.log(newsItem)
+          // console.log(publish_date)
 
           strapi.services.parsednews.create(newsItem);
 
