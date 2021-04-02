@@ -75,7 +75,7 @@ module.exports = {
           const anchors_node_list = document.querySelectorAll(selector);
           const anchors = [...anchors_node_list];
           return anchors.map(link => link.href);
-        }, 'div.pt-1 > div > a')
+        }, 'div.news_m_box > a')
 
         console.log(news_links.length)
 
