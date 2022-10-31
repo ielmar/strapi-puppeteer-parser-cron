@@ -11,9 +11,9 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "cheerio": "^1.0.0-rc.5",
+    "cheerio": "^1.0.0-rc.12",
     "knex": "^0.95.4",
-    "puppeteer": "^5.2.1",
+    "puppeteer": "^19.2.0",
     "sqlite3": "latest",
     "strapi": "^3.5.4",
     "strapi-admin": "^3.5.4",
