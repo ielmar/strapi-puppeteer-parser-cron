@@ -4,15 +4,15 @@ This is a web scraper which uses Strapi as a headless backend with Sqlite as a d
 
 ---
 ## Setup
-Clone this repo to your desktop and run `npm install` to install all the dependencies.
+Clone this repo to your desktop and run `yarn install` to install all the dependencies.
 
 You might want to look into `config.json` to make change the port you want to use and set up a SSL certificate.
 
 ---
 
 ## Usage
-After you clone this repo to your desktop, go to its root directory and run `npm install` to install its dependencies.
+After you clone this repo to your desktop, go to its root directory and run `yarn install` to install its dependencies.
 
-Once the dependencies are installed, you can run  `npm start` to start the application. You will then be able to access it at localhost:3001. You will need to set up administrator login after first install. 
+Once the dependencies are installed, you can run `yarn start` to start the application. You will then be able to access it at localhost:3001. You will need to set up administrator login after first install. 
 
 Add a folder `.tmp` and create a file named `data.db` under it.
