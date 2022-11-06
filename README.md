@@ -18,10 +18,10 @@ Add a folder `.tmp` and create a file named `data.db` under it.
 
 ### Built With
 
-* NodeJS
-* ExpressJS
-* MySQL
-* Node-Cron
+* StrapiJS
+* Puppeteer
+* Sqlite3
+* Cron
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
